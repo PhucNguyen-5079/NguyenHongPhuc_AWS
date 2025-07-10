@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on AWS System Manager</title>
-    <link>https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/categories/</link>
+    <link>https://phucnguyen-5079.github.io/NguyenHongPhuc_AWS/categories/</link>
     <description>Recent content in Categories on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://phucnguyen-5079.github.io/NguyenHongPhuc_AWS/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

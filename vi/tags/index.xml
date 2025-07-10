@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on AWS System Manager</title>
-    <link>https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/tags/</link>
+    <link>https://phucnguyen-5079.github.io/NguyenHongPhuc_AWS/vi/tags/</link>
     <description>Recent content in Tags on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://phucnguyen-5079.github.io/NguyenHongPhuc_AWS/vi/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
