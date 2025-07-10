@@ -1,4 +1,4 @@
-baseURL = "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/"
+baseURL = "https://phucnguyen-5079.github.io/NguyenHongPhuc_AWS/"
 relativeURLs = true
 canonifyURLs = true
 # Change the default theme to be use when building the site with Hugo

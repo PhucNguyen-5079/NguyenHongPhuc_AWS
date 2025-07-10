@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kiểm tra website, fix lỗi CORS &amp; 404 on AWS System Manager</title>
-    <link>https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/5-portfwd/</link>
+    <link>https://phucnguyen-5079.github.io/NguyenHongPhuc_AWS/vi/5-portfwd/</link>
     <description>Recent content in Kiểm tra website, fix lỗi CORS &amp; 404 on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/5-portfwd/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://phucnguyen-5079.github.io/NguyenHongPhuc_AWS/vi/5-portfwd/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
