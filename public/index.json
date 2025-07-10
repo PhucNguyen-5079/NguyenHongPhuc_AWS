@@ -1,0 +1,99 @@
+[
+{
+	"uri": "//localhost:1313/4-s3log/4.1-updateiamrole/",
+	"title": "Create a CloudFront Distribution connected to an existing S3 bucket",
+	"tags": [],
+	"description": "",
+	"content": "4.1 Access CloudFront and create a new Distribution To distribute web content via CloudFront, you need to create a CloudFront Distribution and point it to the S3 bucket containing your website.\n🔹 Step 1: Access the CloudFront service Go to:\n👉 https://console.aws.amazon.com/cloudfront/v3/home On the CloudFront page, click Create distribution 🔹 Step 2: Get started In Distribution options:\nEnter a name in Distribution name, e.g., react-app-cdn1 The Description - optional field can be left blank Select Single website or app The Custom domain - optional field can be left blank Then click Next ✅ Next: go to [4.2 – Configure Origin \u0026amp; Security] "
+},
+{
+	"uri": "//localhost:1313/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": " Amazon S3 and CloudFront are two core AWS services that help you deploy a static website quickly, cost-effectively, and securely.\nYou don\u0026rsquo;t need to manage servers, install Nginx or Apache, and you can still distribute your website globally with high performance and secure HTTPS.\nWhen using S3 to host your website and CloudFront to distribute content (CDN), you get the following benefits:\nNo need to rent a dedicated server (EC2) or VPS. No need to install web server software like Apache or Nginx. No need to open ports or configure firewalls. Website can be accessed globally via CloudFront CDN, speeding up load times. Free HTTPS support via CloudFront certificates. Can use your own domain or the default link like https://xxxxx.cloudfront.net. S3 supports versioning, public/private access, and easy integration with other services. Deploying static sites like React, Vue, Hugo, Jekyll\u0026hellip; is extremely simple with just a build/ folder. With these advantages, using S3 + CloudFront is a great choice for deploying personal websites, portfolios, landing pages, or even static blogs—without worrying about server costs or connection security.\nYou no longer need to deploy EC2 servers or Bastion Hosts to make your site public—the whole process is completely serverless and can auto scale without limits.\n"
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.1-setup/",
+	"title": "Prepare the development environment",
+	"tags": [],
+	"description": "",
+	"content": "Guide to setting up the React development environment Install Node.js and npm Go to https://nodejs.org and choose the appropriate LTS version for your operating system. Install as you would any regular Windows software. Open a terminal (Command Prompt or PowerShell) and check the installation: node -v npm -v Install create-react-app and initialize a React project Install create-react-app globally: npm install -g create-react-app Create a new React project: npx create-react-app my-web cd my-web "
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "Session Management",
+	"tags": [],
+	"description": "",
+	"content": "Workshop: Deploying a Static Website with Amazon S3 and CloudFront Overview In this workshop, you will learn how to use AWS services to deploy a static website built with React or Hugo. You will practice:\nUploading source code to Amazon S3 Distributing content globally via Amazon CloudFront (CDN) Enabling HTTPS for enhanced security Managing S3 access permissions and policies for stable website operation. Contents Introduction to static web hosting on AWS Project preparation (React) and build Create S3 bucket and upload website content Configure CloudFront and HTTPS Check website, fix CORS \u0026amp; 404 errors Clean up resources title : \u0026ldquo;Session Management\u0026rdquo; date: 2025-05-25 weight : 1 chapter : false Work with Amazon System Manager - Session Manager Overall In this lab, you\u0026rsquo;ll learn the basics and practice of Amazon System Manager - Session Manager . Perform creating public and private instance connections.\nContent Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/2.2-build/",
+	"title": "Build React project",
+	"tags": [],
+	"description": "",
+	"content": "Build React project In this section, you will use a pre-provided React project to save time on initialization. After downloading the project, you will install dependencies, edit, test, and build it to get ready for deployment to Amazon S3.\n🔹 Step 1: Download the React project You can download a sample project from GitHub or from the provided .zip file:\n📦 Download React project (.zip)\n🔹 Step 2: Install dependencies In the project directory, run:\nnpm install 🔹 Step 3: Edit website content Open the file:\nsrc/App.js → Edit the UI, text, images, etc. as needed. → This is the part that will be displayed after you deploy.\n🔹 Step 4: Test the website locally Run:\nnpm start → The browser will automatically open http://localhost:3000 → Check the interface and displayed content.\n🔹 Step 5: Build the project for deployment After editing, run:\nnpm run build → This command will create the folder:\nbuild/ 📦 The build/ folder contains all web content ready to upload to Amazon S3.\n👉 Next: Move to Step 3 – Upload content to S3\n"
+},
+{
+	"uri": "//localhost:1313/4-s3log/4.2-creates3bucket/",
+	"title": "Configure Origin and CloudFront Security",
+	"tags": [],
+	"description": "",
+	"content": "4.2 Configure Origin and CloudFront Security Next, you need to set up the data source (origin)—which is the S3 bucket you uploaded your website to—and configure security settings.\n🔹 Step 3: Specify origin In Origin type select Other In Origin In the Custom origin field, enter the website link from the Object URL in step 3 Leave Origin path - optional blank In Setting In Origin settings, select Customize origin settings In Protocol, select HTTP only, and set HTTP port to 80 Then click Next 🔹 Step 4: Enable security In Web Application Firewall (WAF) select Do not enable security protections Note:\nFor the purpose of this workshop, which is to deploy a simple, quick static website, you do NOT need to enable WAF to avoid: Unnecessary complexity Additional costs (WAF is charged separately) Time spent setting up rules and ACLs that are not needed for a static site Then click Next ✅ Next: go to [4.3 – Review and check CloudFront]\n"
+},
+{
+	"uri": "//localhost:1313/2-prerequiste/",
+	"title": "Preparation (React project) and build",
+	"tags": [],
+	"description": "",
+	"content": "\rBefore starting this workshop, you need to prepare a static website built from popular frameworks like React, Vue, Hugo, or Jekyll. In this section, we will focus on React.\nIn this lab, you will deploy a static website to AWS using two main services:\nAmazon S3 to store and serve website content Amazon CloudFront to distribute content globally with high performance and free HTTPS support To get started, follow these steps:\n2.1 Prepare the development environment Install Node.js and npm Install create-react-app to initialize a React project Create a folder and check the web interface on localhost 2.2 Build the React project for deployment Customize your web content in src/ Run npm run build to create the build/ folder with content ready to deploy If you are new to React or don\u0026rsquo;t know how to create a project, you can refer to the following documentation:\nOfficial React Guide After completing this step, you will have a build/ folder—this is the content to upload to Amazon S3.\nPreparation Table of Contents: 2.1 Prepare the development environment 2.2 Build React project "
+},
+{
+	"uri": "//localhost:1313/4-s3log/4.3-configsessionlogs/",
+	"title": "Confirm configuration &amp; check CloudFront operation",
+	"tags": [],
+	"description": "",
+	"content": "4.3 Confirm configuration \u0026amp; check CloudFront operation 🔹 Step 5: Review and create At this step, you can review the information you entered earlier\nAfter reviewing, click Create distribution Once completed, AWS will automatically redirect you to the CloudFront information page with the status Deploying. Note: Please wait for this status for a few minutes - depending on the number of edge locations you selected for deployment.\n🔹 Step 6: Check CloudFront In the CloudFront interface, select Id In the Distribution domain name section Make sure CloudFront has finished deploying by checking the Last modified section. Click the square icon to copy the URL. Open another tab and paste the CloudFront URL into the search bar, then press enter. Congratulations, you have successfully deployed CloudFront to distribute a static website hosted on S3 without having to public the bucket or object. "
+},
+{
+	"uri": "//localhost:1313/3-accessibilitytoinstances/",
+	"title": "Create S3 bucket and upload website content",
+	"tags": [],
+	"description": "",
+	"content": "3. Create S3 bucket and upload website content After you have the build/ folder from your React project (or public/ if using Hugo), you will upload all its contents to Amazon S3 so your website can be accessed publicly.\n🔹 3.1 Access Amazon S3 service Go to: https://s3.console.aws.amazon.com/s3 Click Create bucket Enter the following information: Bucket name: globally unique name, e.g., phuccg-react-web Object Ownership: select ACLs disabled (recommended) In Block Public Access, uncheck \u0026ldquo;Block all public access\u0026rdquo; Confirm the warning → check ✅ the confirmation box Click Create bucket 🔹 3.2 Upload web content to the bucket Go to the bucket you just created Click Upload Select all contents inside the build/ folder DO NOT upload the entire build folder, only the files inside\nClick Upload 🔹 3.3 Make files public Select all uploaded files → Click Actions \u0026gt; Make public Confirm when prompted Or you can use a Bucket Policy in the next step to make everything public.\n🔹 3.4 Enable Static website hosting In the bucket, go to the Properties tab Scroll down to Static website hosting Click Edit, then enable: Enable → ✅ Enable Index document: index.html Error document: index.html (or error.html if you have one) Click Save changes ✅ Result You will see a link like this:\nhttp://phuccg-react-web.s3-website-ap-southeast-1.amazonaws.com 🔹 3.5 Make files public using Bucket Policy In the bucket, go to the Permissions tab Select Bucket policy Click Edit, then paste this JSON: { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Sid\u0026#34;: \u0026#34;PublicRead\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Principal\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;s3:GetObject\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;arn:aws:s3:::phuccg-react-web/*\u0026#34; } ] } 👉Replace phuccg-react-web with your actual bucket name.\nClick Save changes 🔹 3.6 Check the website After completing the above steps, the next step is to check your website\nIn the bucket, go to the Objects tab Select the phuccg-react-web folder you uploaded Select the index.html file Find the details for index.html Select Object URL. Open the URL in a new browser tab "
+},
+{
+	"uri": "//localhost:1313/4-s3log/",
+	"title": "Configure CloudFront and HTTPS",
+	"tags": [],
+	"description": "",
+	"content": "4. Configure CloudFront and HTTPS 🔰 Introduction to CloudFront Amazon CloudFront is a CDN (Content Delivery Network) service provided by AWS. It helps deliver web content to users worldwide with fast speed, low latency, and high reliability through AWS\u0026rsquo;s network of Edge Locations.\nCloudFront works by caching static content (HTML, CSS, JS, images, videos\u0026hellip;) from the origin (such as Amazon S3) and distributing it through servers closest to users.\n🎯 Benefits of using CloudFront 🚀 Faster page loads for users from any country 🔐 Free HTTPS support with default SSL certificate 📉 Reduces load on S3 because data is cached at Edge Locations 🔎 Protects your website from unusual access via CloudFront Shield (advanced) 🧾 Access logging and easy integration with monitoring tools like CloudWatch 💰 Save on bandwidth costs if you configure the right Price Class 📦 What you will do in this section: Create a CloudFront Distribution connected to your S3 bucket Configure CloudFront to: Distribute static website content Automatically redirect HTTP → HTTPS Check the public link for HTTPS and correct operation Troubleshoot common errors (if any) 👉 After completing this section, your website will:\nBe accessible globally Run faster and more securely Be ready to go public for end users "
+},
+{
+	"uri": "//localhost:1313/5-portfwd/",
+	"title": "Check website, fix CORS &amp; 404 errors",
+	"tags": [],
+	"description": "",
+	"content": "5. Check your website and troubleshoot common errors After deploying your website to S3 and configuring CloudFront, the next step is to check if your website is working properly and handle some common issues: Blank page\n403 or 404 error\nCORS error when calling APIs or loading resources\n🔍 5.1 Access the CloudFront URL After successfully creating the Distribution, you will have a URL like:\nhttps://dxxxxxxxxxxxxxx.cloudfront.net ➡️ Open this link in your browser to check your website.\n✅ 5.2 Check if the page displays correctly Status Meaning ✅ Displays correctly Website works well, no action needed ❌ Blank page or 403 Might be missing index.html or wrong root ❌ 404 for images/CSS Might have uploaded to wrong location in S3 🧪 5.3 Common issues \u0026amp; solutions ❗ Blank page or 403 Forbidden Common causes:\nCloudFront cannot find index.html You have not set Default root object in CloudFront How to fix:\nGo to CloudFront → Select your distribution Tab General → click Edit Enter in Default root object:\nindex.html Click Save → Wait 1–2 minutes → Refresh the website ❗ 404 Not Found error Common causes:\nYou uploaded the entire build/ folder instead of just its contents File is missing or has the wrong path How to fix:\nGo to S3 bucket → Check if files are at the root Correct: /index.html, /static/js/... Incorrect: /build/index.html ❌ If incorrect → Delete and re-upload the correct contents of build/ ❗ CORS (Cross-Origin Resource Sharing) error Cause:\nBrowser blocks when your site calls APIs from another domain without CORS enabled How to fix (basic for S3):\nGo to S3 bucket Tab Permissions → CORS configuration Add the following simple configuration: \u0026lt;CORSConfiguration\u0026gt; \u0026lt;CORSRule\u0026gt; \u0026lt;AllowedOrigin\u0026gt;*\u0026lt;/AllowedOrigin\u0026gt; \u0026lt;AllowedMethod\u0026gt;GET\u0026lt;/AllowedMethod\u0026gt; \u0026lt;AllowedHeader\u0026gt;*\u0026lt;/AllowedHeader\u0026gt; \u0026lt;/CORSRule\u0026gt; \u0026lt;/CORSConfiguration\u0026gt; This is a fully open configuration (for workshop use). In production, you should restrict the domain.\n🧪 Tips for checking your website after deployment\nWhat to check What could be wrong? Is the website visible? If not → check index.html CSS/JS links broken? Check the Network tab Console errors? Check the Console tab HTTPS padlock present? If not → check CloudFront "
+},
+{
+	"uri": "//localhost:1313/6-cleanup/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": "6. Clean up resources After completing the workshop and confirming your website works, you should delete all resources created during the workshop to avoid unnecessary AWS charges.\n🧹 6.1 Delete CloudFront Distribution CloudFront cannot be deleted immediately. You must disable it first and wait for the status to change to Deployed.\nSteps: Go to CloudFront Console Select the Distribution you created Click Disable → confirm Wait for the status to change from Enabled → Disabled Then click Delete This may take a few minutes for CloudFront to complete.\n🧹 6.2 Delete S3 Bucket Go to S3 Console Select the bucket you created (e.g., phuccg-react-web) Click Empty to delete all contents Then click Delete bucket → type the bucket name to confirm You must empty the bucket first before you can delete it.\n🧹 6.3 Check remaining resources Service What to do S3 Ensure no extra buckets remain CloudFront All distributions are deleted ACM (SSL certificate) If you used a custom domain → can delete manually IAM Role / OAC No need to delete if not created manually Route 53 (if any) If you attached a domain → check domain zone ✅ Done Congratulations! You have completed the workshop on deploying a static website with Amazon S3 and CloudFront!\nYou have learned how to:\nBuild a React project Upload content to S3 Configure CDN and HTTPS with CloudFront Check, troubleshoot, and clean up AWS resources 👉 Next steps you can explore:\nAutomate deployment with GitHub Actions Attach a custom domain with Route 53 Integrate backend APIs with Lambda or Amplify "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
