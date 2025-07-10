@@ -1,97 +1,97 @@
 [
 {
-	"uri": "//localhost:1313/vi/4-s3log/4.1-updateiamrole/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/4-s3log/4.1-updateiamrole/",
 	"title": "**Tạo một CloudFront Distribution** kết nối với bucket S3 đã có",
 	"tags": [],
 	"description": "",
 	"content": "4.1 Truy cập vào CloudFront và tạo mới Distribution Để phân phối nội dung web qua CloudFront, bạn cần tạo một CloudFront Distribution mới và trỏ nó về bucket S3 chứa website của bạn.\n🔹 Bước 1: Truy cập dịch vụ CloudFront Truy cập đường dẫn:\n👉 https://console.aws.amazon.com/cloudfront/v3/home Tại trang CloudFront, nhấn nút Create distribution 🔹 Bước 2: Get started Tại mục Distribution options:\nĐiền tên tại mục Distribution name, ví dụ: react-app-cdn1 Trong trường Description - optional có thể bỏ trống Chọn Single website or app Tại mục Custom domain - optional có thể bỏ trống Sau đó nhấn Next ✅ Tiếp theo: sang [4.2 – Cấu hình Origin \u0026amp; Security] "
 },
 {
-	"uri": "//localhost:1313/vi/2-prerequiste/2.1-setup/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/2-prerequiste/2.1-setup/",
 	"title": "Chuẩn bị môi trường phát triển",
 	"tags": [],
 	"description": "",
 	"content": "Hướng dẫn cài đặt môi trường phát triển React Cài đặt Node.js và npm Truy cập https://nodejs.org và chọn bản LTS phù hợp với hệ điều hành của bạn. Cài đặt như các phần mềm thông thường trên Windows. Mở terminal (Command Prompt hoặc PowerShell) và kiểm tra cài đặt: node -v npm -v Cài đặt create-react-app và khởi tạo project React Cài đặt create-react-app toàn cục: npm install -g create-react-app Tạo một project React mới: npx create-react-app my-web cd my-web "
 },
 {
-	"uri": "//localhost:1313/vi/1-introduce/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/1-introduce/",
 	"title": "Giới thiệu",
 	"tags": [],
 	"description": "",
 	"content": " Amazon S3 và CloudFront là hai dịch vụ chủ lực của AWS giúp bạn triển khai một website tĩnh một cách nhanh chóng, tiết kiệm và bảo mật.\nBạn không cần quản lý máy chủ, không cần cài đặt Nginx hoặc Apache, và vẫn có thể phân phối website của mình đến người dùng toàn cầu với hiệu suất cao và HTTPS bảo mật.\nKhi sử dụng S3 để host website và CloudFront để phân phối nội dung (CDN), bạn sẽ có được những lợi ích sau:\nKhông cần thuê máy chủ riêng (EC2) hoặc VPS. Không cần cài đặt phần mềm web server như Apache hay Nginx. Không cần mở cổng hay cấu hình tường lửa. Website có thể được truy cập toàn cầu qua CloudFront CDN, tăng tốc độ tải. Hỗ trợ HTTPS miễn phí thông qua chứng chỉ của CloudFront. Có thể kết hợp với tên miền riêng hoặc dùng link mặc định dạng https://xxxxx.cloudfront.net. S3 hỗ trợ quản lý phiên bản (versioning), public/private access và dễ dàng tích hợp với các dịch vụ khác. Triển khai website tĩnh như React, Vue, Hugo, Jekyll\u0026hellip; cực kỳ đơn giản chỉ với 1 thư mục build/. Với những ưu điểm này, việc sử dụng S3 + CloudFront là một lựa chọn tuyệt vời để triển khai các website cá nhân, portfolio, landing page, hoặc thậm chí là các blog tĩnh — mà không cần lo về chi phí máy chủ hoặc bảo mật kết nối.\nBạn không còn cần phải triển khai server EC2 hay Bastion Host để public web — toàn bộ quy trình hoàn toàn serverless và có thể auto scale không giới hạn.\n"
 },
 {
-	"uri": "//localhost:1313/vi/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/",
 	"title": "Session Management",
 	"tags": [],
 	"description": "",
 	"content": "Workshop: Triển khai Website tĩnh với Amazon S3 và CloudFront Tổng quan Trong workshop này, bạn sẽ tìm hiểu cách sử dụng các dịch vụ của AWS để triển khai một website tĩnh (static website) được build bằng React hoặc Hugo.\nBạn sẽ thực hành:\nTải mã nguồn lên dịch vụ Amazon S3 Phân phối nội dung toàn cầu thông qua Amazon CloudFront (CDN) Bật HTTPS để tăng bảo mật Quản lý quyền truy cập và chính sách S3 để website hoạt động ổn định. Nội dung Giới thiệu về hosting web tĩnh trên AWS Chuẩn bị project (React) và build Tạo bucket S3 và upload nội dung website Cấu hình CloudFront và HTTPS Kiểm tra website, fix lỗi CORS \u0026amp; 404 Dọn dẹp tài nguyên "
 },
 {
-	"uri": "//localhost:1313/vi/2-prerequiste/2.2-build/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/2-prerequiste/2.2-build/",
 	"title": "Build project React",
 	"tags": [],
 	"description": "",
 	"content": "Build project React Trong phần này, bạn sẽ sử dụng một project React đã được cung cấp sẵn để tiết kiệm thời gian khởi tạo. Sau khi tải project về, bạn sẽ tiến hành cài đặt, chỉnh sửa, chạy thử và build để sẵn sàng deploy lên Amazon S3.\n🔹 Bước 1: Tải project React Bạn có thể tải project mẫu từ GitHub hoặc từ file .zip được cung cấp:\n📦 Tải file React project (.zip)\n🔹 Bước 2: Cài đặt thư viện Trong thư mục project, chạy lệnh:\nnpm install 🔹 Bước 3: Chỉnh sửa nội dung website Mở file:\nsrc/App.js → Chỉnh sửa giao diện, text, hình ảnh,\u0026hellip; theo nhu cầu. → Đây là phần sẽ hiển thị sau khi bạn deploy.\n🔹 Bước 4: Kiểm tra website trên máy Chạy lệnh:\nnpm start → Trình duyệt sẽ tự mở http://localhost:3000 → Kiểm tra giao diện và nội dung hiển thị.\n🔹 Bước 5: Build project để deploy Sau khi chỉnh sửa xong, chạy lệnh:\nnpm run build → Lệnh này sẽ tạo thư mục:\nbuild/ 📦 Thư mục build/ chứa toàn bộ nội dung web đã sẵn sàng để upload lên Amazon S3.\n👉 Tiếp theo: Chuyển sang Bước 3 – Upload nội dung lên S3\n"
 },
 {
-	"uri": "//localhost:1313/vi/4-s3log/4.2-creates3bucket/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/4-s3log/4.2-creates3bucket/",
 	"title": "Cấu hình Origin và bảo mật CloudFront",
 	"tags": [],
 	"description": "",
 	"content": "4.2 Cấu hình Origin và bảo mật CloudFront Tiếp theo bạn cần thiết lập nguồn dữ liệu (origin) — là bucket S3 đã upload web — và các cài đặt bảo mật.\n🔹 Bước 3: Specify origin Tại mục Origin type Chọn Other Tại mục Origin Trong trường Custom origin điền link website của Object URL ở phần 3 Trong trường Origin path - optionalTại mục Origin path - optional để trống Tại mục Setting Trong trường Origin settings, chọn Customize origin settings Trong trường Protocol, Chọn HTTP only, trong đó HTTP port để số 80 Sau đó nhấn Next 🔹 Bước 4: Enable security Trong trường Web Application Firewall (WAF) chọn Do not enable security protections Lưu ý:\nVì mục tiêu của workshop này là triển khai website tĩnh đơn giản, nhanh gọn, nên bạn KHÔNG cần bật WAF để tránh: Gây phức tạp không cần thiết Phát sinh chi phí thêm (WAF có tính phí riêng) Mất thời gian thiết lập rule, ACLs mà không cần thiết cho web tĩnh Sau đó nhấn Next ✅ Tiếp theo: sang [4.3 – Review và kiểm tra CloudFront]\n"
 },
 {
-	"uri": "//localhost:1313/vi/2-prerequiste/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/2-prerequiste/",
 	"title": "Chuẩn bị project (React) và build",
 	"tags": [],
 	"description": "",
 	"content": "\rTrước khi bắt đầu workshop này, bạn cần chuẩn bị một website tĩnh được build từ các framework phổ biến như React, Vue, Hugo, hoặc Jekyll. Trong phần này, chúng ta sẽ tập trung vào React.\nTrong bài thực hành này, bạn sẽ triển khai website tĩnh lên AWS bằng cách sử dụng hai dịch vụ chính:\nAmazon S3 để lưu trữ và phục vụ nội dung website Amazon CloudFront để phân phối nội dung toàn cầu với hiệu suất cao và hỗ trợ HTTPS miễn phí Để bắt đầu, bạn cần thực hiện các bước sau:\n2.1 Chuẩn bị môi trường phát triển Cài đặt Node.js và npm Cài đặt create-react-app để khởi tạo project React Tạo thư mục và kiểm tra giao diện web trên localhost 2.2 Build project React để deploy Tuỳ chỉnh nội dung web trong src/ Chạy lệnh npm run build để tạo thư mục build/ chứa nội dung sẵn sàng deploy Nếu bạn chưa quen với React hoặc chưa biết cách tạo project, có thể tham khảo tài liệu sau:\nHướng dẫn React chính thức Sau khi hoàn tất bước này, bạn sẽ có thư mục build/ – đây là nội dung sẽ được upload lên Amazon S3.\nMục lục phần chuẩn bị: 2.1 Chuẩn bị môi trường phát triển 2.2 Build project React "
 },
 {
-	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/3-accessibilitytoinstances/",
 	"title": "Tạo bucket S3 và upload nội dung website",
 	"tags": [],
 	"description": "",
 	"content": "3. Tạo bucket S3 và upload nội dung website Sau khi bạn đã có thư mục build/ từ project React (hoặc public/ nếu là Hugo), bạn sẽ tiến hành upload toàn bộ nội dung này lên Amazon S3 để website có thể được truy cập công khai.\n🔹 3.1 Truy cập vào dịch vụ Amazon S3 Truy cập: https://s3.console.aws.amazon.com/s3 Nhấn nút Create bucket Điền các thông tin sau: Bucket name: tên duy nhất toàn cầu, ví dụ: phuccg-react-web Object Ownership: chọn ACLs disabled (recommended) Ở phần Block Public Access, hãy bỏ chọn dòng \u0026ldquo;Block all public access\u0026rdquo; Xác nhận cảnh báo → tích ✅ vào ô xác nhận Nhấn Create bucket 🔹 3.2 Upload nội dung web vào bucket Vào bucket vừa tạo Nhấn Upload Chọn toàn bộ nội dung bên trong thư mục build/ KHÔNG upload cả thư mục build, chỉ các file bên trong\nNhấn Upload 🔹 3.3 Cấp quyền public cho các file Chọn tất cả file vừa upload → Nhấn Actions \u0026gt; Make public Xác nhận khi được hỏi Hoặc bạn có thể dùng Bucket Policy ở bước tiếp theo để public toàn bộ.\n🔹 3.4 Bật Static website hosting Trong bucket, vào tab Properties Kéo xuống mục Static website hosting Nhấn Edit, rồi bật: Enable → ✅ Enable Index document: index.html Error document: index.html (hoặc error.html nếu có) Nhấn Save changes ✅ Kết quả Bạn sẽ thấy một đường dẫn như sau:\nhttp://phuccg-react-web.s3-website-ap-southeast-1.amazonaws.com 🔹 3.5 Cấp quyền public cho file Trong bucket, vào tab Permissions Chọn Bucket policy Nhấn Edit, rồi dán đoạn Json này vào: { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Sid\u0026#34;: \u0026#34;PublicRead\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Principal\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;s3:GetObject\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;arn:aws:s3:::phuccg-react-web/*\u0026#34; } ] } 👉Thay phuccg-react-web bằng đúng tên bucket của bạn.\nNhấn Save changes 🔹 3.6 Kiểm tra website Sau khi đã làm xong các bước thì tới bước tiếp theo sẽ là kiểm tra website\nTrong bucket, vào tab Objects Chọn thư mục phuccg-react-web đã tải lên Chọn file index.html Tìm thông tin chi tiết của index.html Chọn Object URL. Mở URL trong tab mới của trình duyệt "
 },
 {
-	"uri": "//localhost:1313/vi/4-s3log/4.3-configsessionlogs/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/4-s3log/4.3-configsessionlogs/",
 	"title": "Xác nhận cấu hình &amp; kiểm tra CloudFront hoạt động",
 	"tags": [],
 	"description": "",
 	"content": "4.3 Xác nhận cấu hình \u0026amp; kiểm tra CloudFront hoạt động 🔹 Bước 5: Review and create Tại mục này sẽ cho phép bạn kiểm tra lại những mục mà bạn điền trước đó\nSau khi kiểm tra xong thì nhấn Create distribution Sau khi hoàn thành, AWS sẽ tự động chuyển bạn đến trang thông tin CloudFront với trạng thái là Deploying. Lưu ý: Vui lòng đợi trạng thái này trong vài phút - tùy thuộc vào số lượng edge location bạn chọn triển khai.\n🔹 Bước 6: Kiểm tra CloudFront Trong giao diện CloudFront Chọn Id Tại mục Distribution domain name Đảm bảo rằng CloudFront đã deploy xong bằng cách xem nội dung ở mục Last modified. Chọn ký hiệu ô vuông để copy URL. Bật một tab khác và dán giá trị CloudFront URL vào thanh tìm kiếm rồi nhấn enter. Chúc mừng bạn đã triển khai thành công CloudFront để phân phối một website tĩnh được host trên S3 mà không cần phải public bucket hay object. "
 },
 {
-	"uri": "//localhost:1313/vi/4-s3log/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/4-s3log/",
 	"title": "Cấu hình CloudFront và HTTPS",
 	"tags": [],
 	"description": "",
 	"content": "4. Cấu hình CloudFront và HTTPS 🔰 Giới thiệu về CloudFront Amazon CloudFront là một dịch vụ CDN (Content Delivery Network) được cung cấp bởi AWS. Nó giúp phân phối nội dung web đến người dùng trên toàn cầu với tốc độ nhanh, độ trễ thấp và độ tin cậy cao thông qua một mạng lưới các Edge Location của AWS.\nCloudFront hoạt động bằng cách cache nội dung tĩnh (HTML, CSS, JS, ảnh, video\u0026hellip;) từ nguồn gốc (origin) – như Amazon S3 – và phân phối nội dung đó thông qua các server gần người dùng nhất.\n🎯 Lợi ích khi sử dụng CloudFront 🚀 Tăng tốc tải trang cho người dùng từ mọi quốc gia 🔐 Hỗ trợ HTTPS miễn phí với chứng chỉ SSL mặc định 📉 Giảm tải cho S3 vì dữ liệu được cache ở các Edge Location 🔎 Bảo vệ website khỏi các truy cập bất thường thông qua CloudFront Shield (nâng cao) 🧾 Ghi log truy cập và dễ dàng tích hợp với các công cụ giám sát như CloudWatch 💰 Tiết kiệm chi phí truyền tải nếu được cấu hình đúng Price Class 📦 Nội dung bạn sẽ thực hiện trong mục này: Tạo một CloudFront Distribution kết nối với bucket S3 đã có Cấu hình CloudFront để: Phân phối nội dung website tĩnh Tự động chuyển hướng HTTP → HTTPS Kiểm tra link public có HTTPS và hoạt động đúng Xử lý một số lỗi thường gặp (nếu có) 👉 Sau khi hoàn thành mục này, website của bạn sẽ:\nCó thể truy cập toàn cầu Chạy nhanh hơn, bảo mật hơn Sẵn sàng để public cho người dùng cuối "
 },
 {
-	"uri": "//localhost:1313/vi/5-portfwd/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/5-portfwd/",
 	"title": "Kiểm tra website, fix lỗi CORS &amp; 404",
 	"tags": [],
 	"description": "",
 	"content": "5. Kiểm tra website và xử lý lỗi thường gặp Sau khi bạn đã triển khai website lên S3 và cấu hình CloudFront thành công, bước tiếp theo là kiểm tra xem website hoạt động ổn định chưa, và xử lý một số lỗi phổ biến như: Trắng trang (blank page)\nLỗi 403 hoặc 404\nLỗi CORS khi gọi API hoặc load tài nguyên\n🔍 5.1 Truy cập đường dẫn CloudFront Sau khi tạo thành công Distribution, bạn sẽ có một đường dẫn dạng:\nhttps://dxxxxxxxxxxxxxx.cloudfront.net ➡️ Mở link này trong trình duyệt để kiểm tra website.\n✅ 5.2 Kiểm tra trang có hiển thị bình thường không Trạng thái Ý nghĩa ✅ Hiển thị đúng Web hoạt động tốt, không cần xử lý gì ❌ Trắng trang hoặc lỗi 403 Có thể do thiếu index.html hoặc sai root ❌ Lỗi 404 cho ảnh/CSS Có thể upload sai vị trí trong bucket 🧪 5.3 Một số lỗi thường gặp \u0026amp; cách xử lý ❗ Lỗi trắng trang hoặc 403 Forbidden Nguyên nhân phổ biến:\nCloudFront không tìm thấy index.html Bạn chưa cấu hình Default root object trong CloudFront Cách xử lý:\nVào CloudFront → Chọn distribution Tab General → nhấn Edit Điền vào mục Default root object:\nindex.html Nhấn Save → Đợi 1–2 phút → F5 lại web ❗ Lỗi 404 Not Found Nguyên nhân phổ biến:\nBạn upload cả thư mục build/ thay vì chỉ nội dung bên trong File bị thiếu hoặc sai đường dẫn Cách xử lý:\nVào bucket S3 → Kiểm tra file có đúng nằm ở root không Đúng: /index.html, /static/js/... Sai: /build/index.html ❌ Nếu sai → Xoá và upload lại đúng nội dung bên trong build/ ❗ Lỗi CORS (Cross-Origin Resource Sharing) Nguyên nhân:\nTrình duyệt chặn khi web gọi API từ domain khác mà chưa bật CORS Cách xử lý (cơ bản với S3):\nVào bucket S3 Tab Permissions → CORS configuration Thêm cấu hình đơn giản sau: \u0026lt;CORSConfiguration\u0026gt; \u0026lt;CORSRule\u0026gt; \u0026lt;AllowedOrigin\u0026gt;*\u0026lt;/AllowedOrigin\u0026gt; \u0026lt;AllowedMethod\u0026gt;GET\u0026lt;/AllowedMethod\u0026gt; \u0026lt;AllowedHeader\u0026gt;*\u0026lt;/AllowedHeader\u0026gt; \u0026lt;/CORSRule\u0026gt; \u0026lt;/CORSConfiguration\u0026gt; Đây là cấu hình mở hoàn toàn (dùng trong workshop). Khi triển khai thực tế nên giới hạn domain.\n🧪 Gợi ý kiểm tra web sau khi deploy\nMục cần kiểm tra Có gì bất thường không? Web có hiển thị không? Nếu không → kiểm tra index.html Link CSS/JS có lỗi? Kiểm tra tab Network Console có lỗi đỏ? Kiểm tra tab Console Web có ổ khoá HTTPS? Nếu chưa → kiểm tra CloudFront "
 },
 {
-	"uri": "//localhost:1313/vi/6-cleanup/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/6-cleanup/",
 	"title": "Dọn dẹp tài nguyên  ",
 	"tags": [],
 	"description": "",
 	"content": "6. Dọn dẹp tài nguyên Sau khi hoàn tất quá trình thực hành và xác nhận website hoạt động thành công, bạn nên xóa các tài nguyên đã tạo trong workshop để tránh phát sinh chi phí không cần thiết trên AWS.\n🧹 6.1 Xoá CloudFront Distribution CloudFront không thể xóa ngay. Bạn cần disable (tắt) trước rồi chờ trạng thái chuyển sang Deployed.\nCác bước: Truy cập CloudFront Console Chọn Distribution bạn đã tạo Nhấn Disable → xác nhận Đợi trạng thái chuyển từ Enabled → Disabled Sau đó nhấn Delete Việc này có thể mất vài phút để CloudFront thực hiện xong.\n🧹 6.2 Xoá Bucket S3 Truy cập S3 Console Chọn bucket bạn đã tạo (VD: phuccg-react-web) Nhấn Empty để xóa toàn bộ nội dung Sau đó nhấn Delete bucket → gõ tên bucket để xác nhận Bạn phải empty trước thì mới có thể delete bucket.\n🧹 6.3 Kiểm tra các tài nguyên còn tồn tại Dịch vụ Việc cần làm S3 Đảm bảo không còn bucket dư thừa CloudFront Tất cả distribution đã xóa ACM (chứng chỉ SSL) Nếu có dùng domain riêng → có thể xoá thủ công IAM Role / OAC Không cần xoá nếu không tạo thủ công Route 53 (nếu có) Nếu bạn gắn domain → kiểm tra domain zone ✅ Hoàn tất Chúc mừng bạn đã hoàn tất workshop triển khai website tĩnh bằng Amazon S3 và CloudFront!\nBạn đã học được cách:\nBuild project React Upload nội dung lên S3 Cấu hình CDN và HTTPS với CloudFront Kiểm tra, xử lý lỗi và dọn dẹp tài nguyên AWS 👉 Có thể tiếp tục học:\nTự động hoá deploy bằng GitHub Actions Gắn domain riêng với Route 53 Kết hợp API backend bằng Lambda hoặc Amplify "
 },
 {
-	"uri": "//localhost:1313/vi/categories/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "//localhost:1313/vi/tags/",
+	"uri": "https://github.com/PhucNguyen-5079/NguyenHongPhuc_AWS/vi/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
